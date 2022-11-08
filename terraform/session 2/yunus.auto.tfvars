@@ -1,0 +1,1 @@
+s3_bucket_name = "yunus-auto-tfvar-bucket"
