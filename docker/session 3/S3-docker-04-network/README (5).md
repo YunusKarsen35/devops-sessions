@@ -193,7 +193,7 @@ docker container run --name ng-4 -d nginx
 - Copy `myfolder` to container.
 
 ```bash
-docker cp myfolder cp:/
+docker cp myfolder ng-4:/
 ```
 
 - Check the folder inside the container.
