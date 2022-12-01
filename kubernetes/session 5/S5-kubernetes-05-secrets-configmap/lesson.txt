@@ -1,0 +1,19 @@
+1.configmap: deployment.yaml ve service yaml oluşturuldu. imajın bize kendi içeriğinden direkt olarak verdiği çıktıyı 
+web browser : "hello clarusway"'ı  gördük.
+2. configmap: oluşturduğumuz deployment yaml dosyasını farklı bir imaj ve bu imajın çalışırken
+ bize arguments'leri yaml dosyasındaki
+env:
+    - name: GREETING
+     value: selam
+değerden alarak yazdıracak. web browser : selam, Clarusway!
+3. configmap : deployment yaml güncellendi. sonrasında komut satırına 
+"kubectl create configmap demo-config --from-literal=greeting=Hola" komutu girildi. 
+Sonrasında deployment.yaml apply edildi ve environmetimda
+env:
+            - name: GREETING
+              valueFrom:
+                configMapKeyRef:
+                  name: demo-config
+                  key: greeting
+"key: greeting" değerimi komut satırında yazmış olduğum "hola" ile 
+web browser: Hola, Clarusway! şeklinde almış olduk
